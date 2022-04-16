@@ -1,0 +1,25 @@
+{
+	"name": "@isaacaeshliman/jwt",
+	"version": "1.0.0",
+	"description": "A lightweight express middleware for JWT based authentication and authorization",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/iaeshliman/jwt.git"
+	},
+	"author": "Isaac Aeshliman",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/iaeshliman/jwt/issues"
+	},
+	"homepage": "https://github.com/iaeshliman/jwt#readme",
+	"dependencies": {
+		"jsonwebtoken": "8.5.1"
+	},
+	"devDependencies": {
+		"nodemon": "2.0.15"
+	}
+}
