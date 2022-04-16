@@ -7,6 +7,7 @@ const Express = require('express')
 const Morgan = require('morgan')
 
 // Internal
+const Router = require('./routes')
 const JwtParse = require('./middleware/JwtParse')
 const JwtVerify = require('./middleware/JwtVerify')
 const JwtPermit = require('./middleware/JwtPermit')
@@ -62,16 +63,12 @@ app.use(
 
 // General
 app.get('/', (_, res) => res.send('server is running'))
+app.post('/', (_, res) => res.send('server is running'))
+app.post('/temp', (_, res) => res.send('server is running'))
 app.get('/health', (_, res) => res.send({ ok: true, message: 'healthy' }))
 
-// Temp
-app.get('/jwt/permissions', (req, res) => res.send({ ok: true, message: req.jwt }))
-app.post('/jwt/generate', (req, res) =>
-	res.send({ ok: true, message: require('jsonwebtoken').sign(req.body, config.jwt.secret, config.jwt.sign) })
-)
-app.get('/jwt/restricted', JwtPermit(['read_tokens', 'write_tokens']), (_, res) =>
-	res.send({ ok: true, message: 'Restricted access' })
-)
+// Routes
+app.use('/api', Router)
 
 /**
  * Error and 404

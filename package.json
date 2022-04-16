@@ -4,7 +4,7 @@
 	"description": "A lightweight express middleware for JWT based authentication and authorization",
 	"main": "index.js",
 	"scripts": {
-		"dev": "nodemon index.js"
+		"dev": "nodemon -r dotenv/config index.js"
 	},
 	"repository": {
 		"type": "git",
@@ -20,9 +20,11 @@
 		"express": "4.17.3",
 		"jsonwebtoken": "8.5.1",
 		"morgan": "1.10.0",
+		"mysql2": "2.3.3",
 		"uuid": "8.3.2"
 	},
 	"devDependencies": {
+		"dotenv": "16.0.0",
 		"nodemon": "2.0.15"
 	}
 }

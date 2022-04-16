@@ -15,7 +15,7 @@ module.exports = (options = {}) => {
 			req.jwt = {
 				id: null,
 				token: config.parse.map((e) => e(req)).filter((e) => e)[0] || null,
-				permissions: []
+				scopes: []
 			}
 			next()
 		} catch (error) {
