@@ -1,3 +1,5 @@
+const uuid = require('uuid')
+
 module.exports = (options = {}) => {
 	const config = {
 		parse: [
@@ -13,7 +15,7 @@ module.exports = (options = {}) => {
 	return (req, _, next) => {
 		try {
 			req.jwt = {
-				id: null,
+				id: uuid.v1(),
 				token: config.parse.map((e) => e(req)).filter((e) => e)[0] || null,
 				scopes: []
 			}

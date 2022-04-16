@@ -10,7 +10,6 @@ const Morgan = require('morgan')
 const Router = require('./routes')
 const JwtParse = require('./middleware/JwtParse')
 const JwtVerify = require('./middleware/JwtVerify')
-const JwtPermit = require('./middleware/JwtPermit')
 const config = require('./config')
 const { NotFoundError } = require('./errors')
 const { log } = require('./utils')
@@ -47,7 +46,7 @@ app.use(
 			'-',
 			'HTTP',
 			'-',
-			`${req.jwt?.id}`,
+			`[${req.jwt?.id}]`,
 			'-',
 			tokens.method(req, res),
 			tokens.url(req, res),
@@ -63,8 +62,6 @@ app.use(
 
 // General
 app.get('/', (_, res) => res.send('server is running'))
-app.post('/', (_, res) => res.send('server is running'))
-app.post('/temp', (_, res) => res.send('server is running'))
 app.get('/health', (_, res) => res.send({ ok: true, message: 'healthy' }))
 
 // Routes
