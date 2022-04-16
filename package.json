@@ -1,7 +1,7 @@
 {
 	"name": "jwt",
 	"version": "1.0.0",
-	"description": "A lightweight express middleware for JWT based authentication and authorization",
+	"description": "A lightweight express server for JWT based authentication and authorization",
 	"main": "index.js",
 	"scripts": {
 		"dev": "nodemon -r dotenv/config index.js"
@@ -11,7 +11,7 @@
 		"url": "git+https://github.com/iaeshliman/jwt.git"
 	},
 	"author": "Isaac Aeshliman",
-	"license": "ISC",
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/iaeshliman/jwt/issues"
 	},
